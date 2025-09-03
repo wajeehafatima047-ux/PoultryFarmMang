@@ -12,7 +12,7 @@ import AntDesign from "@expo/vector-icons/AntDesign";
 
 const OTP = ({ navigation }) => {
   const goToOTP= () => {
-    navigation.navigate("Home");
+    navigation.navigate("VerificationOtp");
   };
   return (
     <ScrollView style={{ height: "100%" }}>

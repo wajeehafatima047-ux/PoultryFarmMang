@@ -5,7 +5,7 @@ import { View, Text, ScrollView, flex ,Keyboard} from "react-native";
 import { OtpInput } from "react-native-otp-entry";
 const VerificationOtp = ({ navigation }) => {
   const goToVerificationOtp = () => {
-    navigation.navigate("VerificationOtp");
+    navigation.navigate("Home");
   };
   return (
     <ScrollView style={{ height: "100%" }}>
