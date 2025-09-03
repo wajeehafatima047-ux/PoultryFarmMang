@@ -32,31 +32,49 @@ const Home = ({ navigation }) => {
             
         }}
       >
-        <View>
+        <View   >
           <FontAwesome name="sliders" size={24} color="grey" />
 
-          <Text style={{ textAlign: "center", color: "#8B1E23", fontSize: 20 }}>
+          <Text style={{ textAlign: "center", color: "#8B1E23", fontSize: 20 ,fontWeight:"bold"}}>
             Poultry Pro Flock Managment
           </Text>
 
-          <Text style={{ textAlign: "center", color: "black", fontSize: 20 }}>
+
+            <Ionicons name="person-circle-outline" size={24} color="grey"  flexDirection="row" />
+
+          <Text style={{ alignSelf:"center",textAlign: "center", color: "black", fontSize: 20,fontWeight:"bold" }}>
             {" "}
             Category
           </Text>
-
-          <Ionicons name="person-circle-outline" size={24} color="grey" />
+        
+        
         </View>
 
-        <View style={{ display: flex, flexDirection: "row", width: "90%" }}>
+
+{/*         
+        {/* <View
+          style={{
+            display: flex,
+            flexDirection: "row",
+            backgroundColor: "#FAEBD7",
+            margin: 20,
+
+            alignItems:"center"
+          }} */}
+      
+
           <Image
             style={{ margin: 20, padding: 10, height: 70, width: 70 }}
-            source={require("../../assets/images/chicken3.png")}
+            source={require("../../assets/images/chicken5.png")}
           />
           <Image
             style={{ margin: 20, padding: 10, height: 70, width: 70 }}
-            source={require("../../assets/images/chicken2.png")}
+            source={require("../../assets/images/chicken6.png")}
           />
-        </View>
+
+  </View>
+
+        {/* </View> */}
 
         <View
           style={{
@@ -65,7 +83,8 @@ const Home = ({ navigation }) => {
             backgroundColor: "#FAEBD7",
             margin: 20,
           }}
-        >
+        >        <View style={{ display: flex, flexDirection: "row", width: "90%",alignItems:"center" }}>
+
           <Image
             style={{
               color: "#FAEBD7",
@@ -88,7 +107,7 @@ const Home = ({ navigation }) => {
           />
         </View>
 
-        <View
+        {/* <View
           style={{
             display: flex,
             flexDirection: "row",
@@ -117,7 +136,7 @@ const Home = ({ navigation }) => {
 
             <Text style={{ color: "grey" }}>Profile</Text>
           </View>
-        </View>
+        </View> */}
       </View>
     </ScrollView>
   );

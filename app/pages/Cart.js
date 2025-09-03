@@ -17,7 +17,7 @@ const Cart = ({ navigation }) => {
           flex: 1,
         }}
       >
-        <Text style={{ fontSize: 40 }}> YOUR CART</Text>
+        <Text style={{ fontSize: 40 ,textAlign:"center"}}> YOUR CART</Text>
 
         <View style={{ display: "flex", flexDirection: "row" }}>
           <Image

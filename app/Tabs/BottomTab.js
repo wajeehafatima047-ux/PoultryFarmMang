@@ -6,6 +6,13 @@ import Categories from '../pages/Categories';
 import Cart from '../pages/Cart';
 import Profile from '../pages/Profile';
 
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+
+import Feather from "@expo/vector-icons/Feather";
+
+import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
+
+import AntDesign from "@expo/vector-icons/AntDesign";
 
 const Tab = createBottomTabNavigator();
 
@@ -13,13 +20,13 @@ export default function BottomTab() {
     return (
 
         <Tab.Navigator>
-            <Tab.Screen options={{ tabBarIcon: ({ color }) => <Ionicons name="Home" size={24} color={color} /> }} name="Home" component={Home} />
+            <Tab.Screen options={{ tabBarIcon: ({ color }) =>  <AntDesign name="home" size={24} color={color} /> }} name="Home" component={Home} />
 
-             <Tab.Screen options={{ tabBarIcon: ({ color }) => <Ionicons name="Home" size={24} color={color} /> }} name="Categories" component={Categories} />
+             <Tab.Screen options={{ tabBarIcon: ({ color }) =><MaterialIcons name="category" size={24} color={color}/>}} name="Categories" component={Categories} />
 
-               <Tab.Screen options={{ tabBarIcon: ({ color }) => <Ionicons name="Home" size={24} color={color} /> }} name="Cart" component={Cart} />
+               <Tab.Screen options={{ tabBarIcon: ({ color }) =>  <Feather name="shopping-cart" size={24} color={color} /> }} name="Cart" component={Cart} />
 
-              <Tab.Screen options={{ tabBarIcon: ({ color }) => <Ionicons name="Home" size={24} color={color} /> }} name="Profile" component={Profile} />
+              <Tab.Screen options={{ tabBarIcon: ({ color }) =>  <FontAwesome6 name="person" size={24} color={color} /> }} name="Profile" component={Profile} />
 
              
 
@@ -30,3 +37,4 @@ export default function BottomTab() {
 
     );
 }
+

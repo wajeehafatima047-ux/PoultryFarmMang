@@ -1,5 +1,18 @@
 import React from "react";
 
+import {useState} from 'react';
+
+// const Login =({navigation})=>{
+
+
+//   const  [email,setEmail]=useState("");
+
+//     const  [email,setEmail]=useState("");
+   
+
+
+// }
+
 import {
   Text,
   TouchableOpacity,
@@ -11,6 +24,11 @@ import {
 import AntDesign from "@expo/vector-icons/AntDesign";
 
 const Login = ({ navigation }) => {
+
+     const  [email,setEmail]=useState("");
+
+   const  [Password,setPassword]=useState("");
+   
   const goToLogin = () => {
     navigation.navigate("Home");
   };
@@ -32,7 +50,12 @@ const Login = ({ navigation }) => {
 
         <View>
           <TextInput
+
+             onChangeText={( text)=>{setEmail()}}
             style={{
+
+
+           
               borderColor: "white",
               borderWidth: 1,
               width: "80%",
@@ -46,7 +69,11 @@ const Login = ({ navigation }) => {
             placeholder="Your Email"
           />
           <TextInput
+
+           onChangeText={( text)=>{setPassword()}}
             style={{
+
+              
               borderColor: "white",
               borderWidth: 1,
               width: "80%",

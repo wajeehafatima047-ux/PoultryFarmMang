@@ -1,10 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import { Text, TouchableOpacity, View, TextInput, ScrollView  } from "react-native";
 import AntDesign from "@expo/vector-icons/AntDesign";
 
 const Signup = ({ navigation }) => {
+
+  const [Name,setName]=useState("");
+
+    const [email,setEmail]=useState("");
+      const [password,setPassword]=useState("");
+
+        const [Phone,setPhone]=useState("");
+
+          const [Country,setCountry]=useState("");
+
+          
+        const [Farm,setFarm]=useState("");
+        
+        const [Village,setVillage]=useState("");
+
+        
+        const [State,setState]=useState("");
   const goToSignup = () => {
-    navigation.navigate("Signup");
+    navigation.navigate("OTP");
   };
 
   return (
@@ -22,9 +39,11 @@ const Signup = ({ navigation }) => {
           paddingTop: 10,
         }}
       >
-        SignUp
+        Create Account
       </Text>
       <TextInput
+
+         onChangeText={( text)=>{setName()}}
         style={{
           color: "GREY",
           borderColor: "#FAEBD7",
@@ -40,6 +59,8 @@ const Signup = ({ navigation }) => {
         placeholder="Name"
       />
       <TextInput
+
+         onChangeText={( text)=>{setPhone()}}
         style={{
           color: "GREY",
           borderColor: "#FAEBD7",
@@ -55,6 +76,8 @@ const Signup = ({ navigation }) => {
         placeholder=" Phone No"
       />
       <TextInput
+
+         onChangeText={( text)=>{setEmail()}}
         style={{
           color: "GREY",
           borderColor: "#FAEBD7",
@@ -70,6 +93,8 @@ const Signup = ({ navigation }) => {
         placeholder="Email Adress"
       />
       <TextInput
+
+         onChangeText={( text)=>{setPassword()}}
         style={{
           color: "GREY",
           borderColor: "#FAEBD7",
@@ -84,6 +109,80 @@ const Signup = ({ navigation }) => {
         }}
         placeholder="Password"
       />
+
+            <TextInput
+
+               onChangeText={( text)=>{setFarm()}}
+        style={{
+          color: "GREY",
+          borderColor: "#FAEBD7",
+          borderWidth: 1,
+          width: "80%",
+          height: 50,
+          alignSelf: "center",
+          borderRadius: 10,
+          marginTop: 40,
+          backgroundColor: "white",
+          paddingLeft: 10,
+        }}
+        placeholder="Farm name"
+      />
+
+            <TextInput
+
+               onChangeText={( text)=>{setCountry()}}
+        style={{
+          color: "GREY",
+          borderColor: "#FAEBD7",
+          borderWidth: 1,
+          width: "80%",
+          height: 50,
+          alignSelf: "center",
+          borderRadius: 10,
+          marginTop: 40,
+          backgroundColor: "white",
+          paddingLeft: 10,
+        }}
+        placeholder="country"
+      />
+
+            <TextInput
+
+               onChangeText={( text)=>{setState()}}
+        style={{
+          color: "GREY",
+          borderColor: "#FAEBD7",
+          borderWidth: 1,
+          width: "80%",
+          height: 50,
+          alignSelf: "center",
+          borderRadius: 10,
+          marginTop: 40,
+          backgroundColor: "white",
+          paddingLeft: 10,
+        }}
+        placeholder="State"
+      />
+
+            <TextInput
+        style={{
+
+             onChangeText={( text)=>{setVillage()}}
+          color: "GREY",
+          borderColor: "#FAEBD7",
+          borderWidth: 1,
+          width: "80%",
+          height: 50,
+          alignSelf: "center",
+          borderRadius: 10,
+          marginTop: 40,
+          backgroundColor: "white",
+          paddingLeft: 10,
+        }}
+        placeholder="Village name"
+      />
+
+      
 
       <View>
         <Text
@@ -109,6 +208,8 @@ const Signup = ({ navigation }) => {
           marginTop: 40,
         }}
       >
+
+
         <Text
           style={{
             fontSize: 20,
