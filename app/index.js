@@ -14,6 +14,8 @@ import OTP from './pages/OTP'
 import Profile from "./pages/Profile";
 import BottomTab from "./Tabs/BottomTab";
 
+import {persistor,store} from './redux/store';
+
 
 
 const Stack = createNativeStackNavigator();
@@ -37,6 +39,19 @@ export default function App() {
           <Stack.Screen name="BottomTab" component={BottomTab} />
 
       {/* <Stack.Screen name="Registration" component={Registration} /> */}
+
+
     </Stack.Navigator>
+
+
+
+
+
   );
 }
+ 
+
+
+
+
+

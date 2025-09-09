@@ -8,6 +8,10 @@ import {
 } from "react-native";
 import AntDesign from "@expo/vector-icons/AntDesign";
 
+import { useDispatch } from "react-redux";
+import { handleSignUp } from "../Helper/firebaseHelper";
+import { setUser } from "../redux/Slices/HomeDataSlice";
+
 const Signup = ({ navigation }) => {
   const [Name, setName] = useState("");
 
@@ -23,8 +27,22 @@ const Signup = ({ navigation }) => {
   const [Village, setVillage] = useState("");
 
   const [State, setState] = useState("");
-  const goToSignup = () => {
-    navigation.navigate("OTP");
+
+  const [City, setCity] = useState("");
+  const dispatch = useDispatch();
+
+  const goToLogin = async () => {
+    const user = await handleSignUp(email, password, {
+      role: "Customer",
+    Name,email,password,Phone,Country,Farm,Village,State,City
+    });
+
+    if (user?.uid) {
+      dispatch(setRole("Customer"));
+      dispatch(setUser(user));
+    } else {
+      alert("Error in sign up");
+    }
   };
 
   return (
@@ -41,8 +59,8 @@ const Signup = ({ navigation }) => {
           Create Account
         </Text>
         <TextInput
-          onChangeText={(text) => {
-            setName();
+          onChangeText={(e) => {
+            setName(e);
           }}
           style={{
             color: "GREY",
@@ -59,8 +77,8 @@ const Signup = ({ navigation }) => {
           placeholder="Name"
         />
         <TextInput
-          onChangeText={(text) => {
-            setPhone();
+          onChangeText={(num) => {
+            setPhone(num);
           }}
           style={{
             color: "GREY",
@@ -78,7 +96,7 @@ const Signup = ({ navigation }) => {
         />
         <TextInput
           onChangeText={(text) => {
-            setEmail();
+            setEmail(text);
           }}
           style={{
             color: "GREY",
@@ -96,7 +114,7 @@ const Signup = ({ navigation }) => {
         />
         <TextInput
           onChangeText={(text) => {
-            setPassword();
+            setPassword(text);
           }}
           style={{
             color: "GREY",
@@ -115,7 +133,7 @@ const Signup = ({ navigation }) => {
 
         <TextInput
           onChangeText={(text) => {
-            setFarm();
+            setFarm(text);
           }}
           style={{
             color: "GREY",
@@ -131,10 +149,9 @@ const Signup = ({ navigation }) => {
           }}
           placeholder="Farm name"
         />
-
         <TextInput
           onChangeText={(text) => {
-            setCountry();
+            setCountry(text);
           }}
           style={{
             color: "GREY",
@@ -153,7 +170,7 @@ const Signup = ({ navigation }) => {
 
         <TextInput
           onChangeText={(text) => {
-            setState();
+            setState(text);
           }}
           style={{
             color: "GREY",
@@ -168,6 +185,25 @@ const Signup = ({ navigation }) => {
             paddingLeft: 10,
           }}
           placeholder="State"
+        />
+
+        <TextInput
+          onChangeText={(text) => {
+            setCity(text);
+          }}
+          style={{
+            color: "GREY",
+            borderColor: "#FAEBD7",
+            borderWidth: 1,
+            width: "80%",
+            height: 50,
+            alignSelf: "center",
+            borderRadius: 10,
+            marginTop: 40,
+            backgroundColor: "white",
+            paddingLeft: 10,
+          }}
+          placeholder="City"
         />
 
         <TextInput
@@ -230,3 +266,10 @@ const Signup = ({ navigation }) => {
 };
 
 export default Signup;
+
+
+
+
+
+
+
